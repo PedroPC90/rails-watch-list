@@ -1,8 +1,9 @@
 <h3><%= @list.name %></h3>
 <p><strong>Bookmarks</strong></p>
 <ul class="list-group">
-  <% @list.bookmark.each do |bookmark| %>
-    <li class="list-group-item"><%= bookmark.content %></li>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item"><%= bookmark.comment %></li>
+    <%= link_to "Delete", bookmark_path(bookmark),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <% end %>
 </ul>
 <br>
